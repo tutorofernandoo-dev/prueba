@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Snoopy 3D</title>
+
+  <!-- Importa model-viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    model-viewer {
+      width: 400px;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Aquí cargas tu .glb -->
+  <model-viewer 
+    src="monkey.glb"
+    alt="Mi Snoopy 3D"
+    auto-rotate
+    camera-controls
+    shadow-intensity="1">
+  </model-viewer>
+
+<
