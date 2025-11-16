@@ -2,36 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Snoopy 3D</title>
+  <title>Modelo 3D</title>
 
-  <!-- Importa model-viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
     body {
       margin: 0;
-      background: #000000;
+      background: #111;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      gap: 20px;
+      color: white;
     }
-    model-viewer {
-      width: 400px;
-      height: 500px;
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: #4caf50;
+      color: white;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Aquí cargas tu .glb -->
   <model-viewer 
-    src="monkey.glb"
-    alt="Mi Snoopy 3D"
+    id="snoopy"
+    src="glb/monkey.glb"
+    alt="Modelo 3D"
     auto-rotate
     camera-controls
     shadow-intensity="1">
   </model-viewer>
 
-<
+  <button id="resetBtn">Reset vista</button>
+
+  <script>
+    const viewer = document.getElementById("snoopy");
+    const btn = document.getElementById("resetBtn");
+
+    btn.addEventListener("click", () => {
+      viewer.resetCamera(); // <-- Aquí se resetea la vista
+    });
+  </script>
+
+</body>
+</html>
